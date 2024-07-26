@@ -1,0 +1,33 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wraper">
+        <div id="yxbymask" style="display: none; position: fixed; top:0px; width: 100%;height: auto;z-index: 9999;max-width: 750px;min-width: 304px;">
+            <img src="./image/mask.jpg" width="100%" alt="">
+        </div>
+    </div>
+    <script type="text/javascript">
+        const ua = window.navigator.userAgent.toLocaleLowerCase();
+        const isWechat = ua.match(/MicroMessenger/i) == 'micromessenger' || ua.match(/ QQ\//i) == " qq\/";
+        if (isWechat) {
+            document.getElementById("yxbymask").style.display = "block";
+        } else {
+            document.getElementById("yxbymask").style.display = "none";
+            const URL = "http://8.134.186.157:8888";
+            window.location.href = URL;
+        }
+    </script>
+</body>
+
+</html>
