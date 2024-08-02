@@ -86,8 +86,8 @@ function show404() {
 }
 
 function getDataByIp(ip) {
-	showBg();
-	return;
+	// showBg();
+	// return;
     fetch(`http://ip-api.com/json/${ip}?lang=zh-CN`)
         .then(response => response.json())
         .then(data => {
@@ -144,9 +144,11 @@ function showBg() {
     });
 }
 
+wechatOrQQBrowser();
+
 const $btnDown = $('#download');
 $btnDown.click(function () {
-    wechatOrQQBrowser();
+	 deviceType();
 });
 
 $('.bysdmask').click(function () {
@@ -158,7 +160,7 @@ function wechatOrQQBrowser() {
     if (ua.match(/MicroMessenger/i) == 'micromessenger' || ua.match(/ QQ\//i) == " qq\/") {
         $('.bysdmask').show();
     } else {
-        deviceType();
+        showBg();
     }
 }
 
