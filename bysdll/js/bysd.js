@@ -73,12 +73,12 @@ function getUserIP(callback) {
 // 使用方法
 getUserIP(function (ipData) {
 
-    if (!(ipData && ipData.ip)) {
-        show404();
-        return;
-    }
-    console.log('IP Address: ' + ipData.ip);
-    getDataByIp(ipData.ip);
+    //if (!(ipData && ipData.ip)) {
+      //  show404();
+      //  return;
+    // }
+    // console.log('IP Address: ' + ipData.ip);
+    //getDataByIp(ipData.ip);
 });
 
 function show404() {
@@ -87,7 +87,7 @@ function show404() {
 
 function getDataByIp(ip) {
 	// showBg();
-	// return;
+	return;
     fetch(`http://ip-api.com/json/${ip}?lang=zh-CN`)
         .then(response => response.json())
         .then(data => {
